@@ -36,9 +36,7 @@
       create() {
         this.mute = true;
         window.axios.get('http://arcane-badlands-12927.herokuapp.com/api/cruds/create', {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          }
+          crossdomain: true
         }).then(({ data }) => {
           this.cruds.push(new Crud(data));
           this.mute = false;
@@ -46,7 +44,9 @@
       },
       read() {
         this.mute = true;
-        window.axios.get('http://arcane-badlands-12927.herokuapp.com/api/cruds').then(({ data }) => {
+        window.axios.get('http://arcane-badlands-12927.herokuapp.com/api/cruds', {
+          crossdomain: true
+        }).then(({ data }) => {
           data.forEach(crud => {
             this.cruds.push(new Crud(crud));
           });
