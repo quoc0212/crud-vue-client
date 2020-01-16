@@ -35,7 +35,11 @@
     methods: {
       create() {
         this.mute = true;
-        window.axios.get('http://arcane-badlands-12927.herokuapp.com/api/cruds/create').then(({ data }) => {
+        window.axios.get('http://arcane-badlands-12927.herokuapp.com/api/cruds/create', {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          }
+        }).then(({ data }) => {
           this.cruds.push(new Crud(data));
           this.mute = false;
         });
