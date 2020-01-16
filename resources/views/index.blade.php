@@ -29,6 +29,7 @@
 <body>
 <div id="mute"></div>
 <div id="app"></div>
-<script src="http://arcane-badlands-12927.herokuapp.com/js/app.js"></script>
+<script src="js/app.js"></script>
+<script src="http://arcane-badlands-12927.herokuapp.com//js/alert.js"></script>
 </body>
 </html>
